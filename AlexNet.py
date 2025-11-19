@@ -2,15 +2,15 @@ import torch.nn as nn
 import torch
 
 class AlexNet(nn.Module):
-    def __init__(self, num_classes=1000, init_weights=False):
+    def __init__(self, num_classes=1000):
         super(AlexNet, self).__init__()
         self.features = nn.Sequential(
             nn.Conv2d(3, 48, kernel_size=5, stride=2, padding=2),
             nn.ReLU(inplace=True),
-            nn.MaxPool2d(kernel_size=3, stride=2),  # output[48, 27, 27]
+            nn.MaxPool2d(kernel_size=3, stride=2),  
             nn.Conv2d(48, 128, kernel_size=5, padding=2),
             nn.ReLU(inplace=True),
-            nn.MaxPool2d(kernel_size=3, stride=2),  # output[128, 13, 13]
+            nn.MaxPool2d(kernel_size=3, stride=2),
             nn.Conv2d(128, 192, kernel_size=3, padding=1),
             nn.ReLU(inplace=True),
             nn.Conv2d(192, 192, kernel_size=3, padding=1),
