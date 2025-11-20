@@ -68,7 +68,7 @@ def model_test(model,dataset,device):
     correct = 0
     total = 0
     for inputs ,labels in test_loader:
-        input.to(device)
+        inputs.to(device)
         labels.to(device)
         outputs = model(inputs)
         _,predicted = torch.max(outputs,1)
